@@ -8,7 +8,7 @@ def create_account():
             print("Please enter a valid name")
 
     while True:
-        email = input("Please enter your email: ")
+        email = input("Please enter your email: ").strip()
 
         if email.strip() != "" and "@" in email and "." in email and len(email) > 7:
             break
@@ -33,3 +33,15 @@ def create_account():
 
     print("Account created successfully")
     return account
+
+def login(accounts):
+    email = input("Please enter your email: ").strip()
+    password = input("Please enter your password: ")
+    for account in accounts:
+        if account["email"] == email and account["password"] == password:
+            print("Login successful")
+            print("Welcome " + account["name"])
+            return account
+
+    print("Invalid email and/or password.")
+    return None

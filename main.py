@@ -1,4 +1,4 @@
-from wallet import create_account
+from wallet import create_account, login
 accounts = []
 
 def main_menu():
@@ -16,7 +16,7 @@ def main_menu():
             new_account = create_account()
             accounts.append(new_account)
         elif choice == "2":
-            print("Login coming soon")
+            login(accounts)
         elif choice == "3":
             print("Thank you for using Python E-Wallet")
             break
